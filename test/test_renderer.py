@@ -1,17 +1,19 @@
 import unittest
 import json
-from renderer import Renderer
+# pylint: disable=import-error
+from core.renderer import Renderer
+
 
 class CrawlerTest(unittest.TestCase):
 
     def setUp(self):
         self.renderer = Renderer()
-        self.test_input_01 = "result_dornheim_10.json"
-        self.test_result_01 = "result_dornheim_10.html"
+        self.test_input_01 = "test/test_data/result_dornheim_10.json"
+        self.test_result_01 = "test/test_data/result_dornheim_10.html"
         
 
     def test_rendering(self):
-        test_output = "test_result.html"
+        test_output = "test/tmp_results/__test_result.html"
         with open(self.test_input_01, "r") as file:
             test_input_01 = json.load(file)
         self.renderer.render_json_result(test_input_01, test_output)

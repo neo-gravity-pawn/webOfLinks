@@ -1,13 +1,15 @@
 import unittest
 import json
-from crawler import Crawler
+# pylint: disable=import-error
+from core.crawler import Crawler
+
 
 class CrawlerTest(unittest.TestCase):
 
     def setUp(self):
         self.crawler = Crawler()
         self.test_url_01 = "https://www.dornheim-medical-images.de/"
-        self.test_results_01 = "result_dornheim_10.json"
+        self.test_results_01 = "test/test_data/result_dornheim_10.json"
 
     def test_find_all_links(self):
         self.crawler.set_max_nr_of_interations(10)
