@@ -13,18 +13,19 @@ class Renderer:
             colors = {
                 "internal": {
                     "ok": "#9eeb34",
-                    "broken": "#f28016"
+                    "broken": "#f28016",
+                    "is_file": "#30f1ff"
                 },
                 "external": {
                     "ok": "#b416f2",
-                    "broken": "#a693ad"
+                    "broken": "#e2e1e3",
+                    "is_file": "#30ffee"
                 }
             }
-            color = colors["external" if link_info["is_external"] else "internal"]["ok" if link_info["status"] == 200 else "broken"]
+            color = colors["external" if link_info["is_external"] else "internal"]["is_file" if link_info["is_file"] else ("ok" if link_info["status"] == 200 else "broken")]
             self.net.add_node(link_info["from"])
             self.net.add_node(link_info["to"], color = color)
             self.net.add_edge(link_info["from"], link_info["to"])
 
     def __create_html(self, path):
-        # self.net.enable_physics(True)
         self.net.show(path)

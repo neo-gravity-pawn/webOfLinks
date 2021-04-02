@@ -8,7 +8,7 @@ class CrawlerTest(unittest.TestCase):
 
     def setUp(self):
         self.crawler = Crawler()
-        self.test_url_01 = "https://www.dornheim-medical-images.de/"
+        self.test_url_01 = "https://dornheim.tech"
         self.test_results_01 = "test/test_data/result_dornheim_10.json"
 
     def test_find_all_links(self):
