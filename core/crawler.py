@@ -63,7 +63,7 @@ class Crawler:
         return None, None
     
     def __in_blocklist(self, url):
-        blocklist = ['mailto']
+        blocklist = ['mailto:', 'javascript:']
         for term in blocklist:
             if url.startswith(term):
                 return True
