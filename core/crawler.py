@@ -24,7 +24,7 @@ class Crawler:
         url = info["to"]
         status = 0
         count_hint = f"/{self.max_nr_iterations}" if self.max_nr_iterations != -1 else ""
-        print(f"Parse({self.nr_interations}{count_hint}): {url}", url)
+        print(f"Parse({self.nr_interations}{count_hint}): {url}")
         headers = {"User-Agent": "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.3"}
         req = request.Request(url=url, headers=headers) 
         try:
