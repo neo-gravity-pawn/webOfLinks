@@ -25,14 +25,15 @@ class Crawler:
         status = 0
         count_hint = f"/{self.max_nr_iterations}" if self.max_nr_iterations != -1 else ""
         print(f"Parse({self.nr_interations}{count_hint}): {url}", url)
+        headers = {"User-Agent": "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.3"}
+        req = request.Request(url=url, headers=headers) 
         try:
-            response = request.urlopen(url)
+            response = request.urlopen(req)
         except urllib.error.HTTPError:
             status = 404
         except:
             print("URL OPEN: unexpected error")
             status = 666
-        print("STATUS", status)
         status = response.status if status == 0 else status
         self.__set_status(url, status) 
         if self.__is_ok_to_be_parsed(url):
