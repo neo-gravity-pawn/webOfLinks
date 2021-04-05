@@ -12,7 +12,7 @@ class CrawlerTest(unittest.TestCase):
         self.test_results_01 = "test/test_data/result_dornheim_10.json"
 
     def test_find_all_links(self):
-        self.crawler.set_max_nr_of_interations(10)
+        self.crawler.max_nr_iterations = 10
         self.crawler.run(self.test_url_01)
         result = self.crawler.get_results()
         #with open(self.test_results_01, "w") as file:
