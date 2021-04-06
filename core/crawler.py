@@ -8,7 +8,7 @@ class Crawler:
         self.max_nr_iterations = -1
         self.nr_interations = 0
         self.domain = ""
-        self.ignore_internal_query_urls = True 
+        self.ignore_internal_query_urls = False 
     
     def run(self, url):
         parsed_url = parse.urlparse(url)
