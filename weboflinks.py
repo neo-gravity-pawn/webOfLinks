@@ -32,7 +32,7 @@ def render(args, result):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser._action_groups.pop()
-    
+
     required = parser.add_argument_group("required arguments")
     optional = parser.add_argument_group("optional arguments")
     required.add_argument("--url", help="url that should be parsed",required=True)
@@ -46,7 +46,6 @@ if __name__ == "__main__":
 
 
 # TODO
-# DOCUMENTATION
 # FUTURE IMPROVEMENTS
 #   FULL GRAPH
 #   BETTER HANDLING OF DYNAMIC CONTENT (CALENDAR)
