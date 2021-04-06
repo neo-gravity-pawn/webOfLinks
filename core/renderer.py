@@ -48,7 +48,7 @@ class Renderer:
             "404": "broken",
             "666": "parse_error"
         }
-        return status_code_map.get(link_info["status"], "ok")
+        return status_code_map.get(str(link_info["status"]), "ok")
 
     def __create_html(self, path):
         self.net.show(path)
