@@ -4,6 +4,8 @@ This is a small crawler for website links within a domain. It creates a graphica
 
 It only has rudimentary functionality (e.g. rough heuristics to identify files, max number of links to parse, an option to ignore query URLs to avoid getting stuck in an calendar or similar fancy page elements ;)).
 
+It also has currently not intermediate result saving (if it crashes, everything is lost) and the results only show the first link encounter, meaning multiple occurrences of the same link on different pages are not represented. Thus, the resulting graph might look more artistic but does in some cases not represent the actual page structure.
+
 Feel free to  improve it via pull requests or forks :)
 
 ### License
