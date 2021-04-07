@@ -27,5 +27,5 @@ Python 3.6
 ### Usage
 
 * to crawl provide an URL and and output id: `python3 weboflinks.py --url https://myurl.com --out myurl`, the resulting files will be located in `/results` and a browser will be opened to show the interactive result visualization (node color legend - red: root, green: internal (ok), orange: internal (broken), purple: external (ok), gray: external (broken), cyan: internal or external file links, white: parsing error)
-* to show all parameters `python3 weboflinks -h`
+* to show all parameters `python3 weboflinks.py -h`
 * to run tests: `python3 -m unittest`
